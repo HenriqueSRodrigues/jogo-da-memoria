@@ -1,35 +1,40 @@
+* {
+    box-sizing: border-box;
+}
 html {
   width: 100%;
   height: 100%;
   font-family: "Courier New", Courier, monospace;
+  background: hsl(330, 100%, 75%);
 }
-body {
-  height: 100vh;
-  display: flex;
-  background: #fd6aaf;
+
+h1{
+  text-align: center;
 }
 
 .jogoMemoria {
-  width: 680px;
-  height: 500px;
+  width: 800px;
+  height: 550px;
   border: 1px solid black;
   border-radius: 10px;
   position: relative;
-  margin: 10px auto;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
 }
-.cartaMemoria {
+.carta {
   width: 160px;
   height: 240px;
-  margin: 5px;
+  margin: 10px;
+  margin-left: 25px;
   position: relative;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
-.cartaMemoria.flip {
-  transform: rotateY(180deg);
+.carta:hover {
+  cursor: pointer;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 15px;
 }
 
 .cartaMemoria:active {
@@ -41,10 +46,31 @@ body {
 .verso {
   width: 100%;
   height: 100%;
-  padding: 20px;
   position: absolute;
-  border-radius: 5px;
+  border-radius: 15px;
   background: #1c7ccc;
-  box-sizing: border-box;
 }
-
+.verso {
+  background-image: url("/img/porygon.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 15px;
+}
+.reiniciar {
+  margin: 0 auto;
+   width: 100px;
+  height: 45px;
+  border-radius: 15px;
+  background-color: #1c7ccc;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.placar, .tabela{
+  align-items: center;
+  text-align: center;
+}

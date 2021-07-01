@@ -1,46 +1,66 @@
 $(document).ready(function () {
-  // var carta0 = $("#cartaAngular1");
-  // var carta1 = $("#cartaAngular2");
-  // var carta2 = $("#cartaCss1");
-  // var carta3 = $("#cartaCss2");
-  // var carta4 = $("#cartaHtml1");
-  // var carta5 = $("#cartaHtml2");
-  // var carta6 = $("#cartaNode1");
-  // var carta7 = $("#cartaNode2");
-  // var verso0 = $("#versoAngular1");
-  // var verso1 = $("#versoAngular2");
-  // var verso2 = $("#versoCss1");
-  // var verso3 = $("#versoCss2");
-  // var verso4 = $("#versoHtml1");
-  // var verso5 = $("#versoHtml2");
-  // var verso6 = $("#versoNode1");
-  // var verso7 = $("#versoNode2");
+  var posicao = {
+    cartas: [1, 1, 2, 2, 3, 3, 4, 4],
+    inicia: function () {
+      posicao.embaralha();
+    },
+    embaralha: function () {
+      var aleatorio = 0;
+      var resultado = 0;
+      for (i = 1; i < posicao.cartas.length; i++) {
+        aleatorio = Math.round(Math.random() * i);
+        resultado = posicao.cartas[i];
+        posicao.cartas[i] = posicao.cartas[aleatorio];
+        posicao.cartas[aleatorio] = resultado;
+      }
+      posicao.atribuirCartas();
+      console.log("Array cartas embaralhadas: " + posicao.cartas);
+    },
+    atribuirCartas: function () {
+      $(".carta").each(function (index) {
+        $(this).attr("data-carta-value", posicao.cartas[index]);
+        console.log();
+      });
+      posicao.clickManipuladores();
+    },
+    clickManipuladores: function () {
+      $(".carta").click(function () {
+        $(this)
+          .html("<p>" + $(this).data("cartaValue") + "</p>")
+          .addClass("selecionado");
+        posicao.verificaPar();
+      });
+    },
+    verificaPar: function () {
+      if ($(".selecionado").length === 2) {
+        if (
+          $(".selecionado").first().data("cartaValue") ==
+          $(".selecionado").last().data("cartaValue")
+        ) {
+          $(".selecionado").each(function () {
+            $(this).animate({ opacity: 0 }).removeClass("pares");
+          });
+          $(".selecionado").each(function () {
+            $(this).removeClass("selecionado");
+          });
+        } else {
+          setTimeout(function () {
+            $(".selecionado").each(function () {
+              $(this).html("").removeClass("selecionado");
+            });
+          }, 300);
+        }
+      }
+      posicao.checarVitoria()
+    },
+    checarVitoria: function () {
+      if ($(".pares").length === 0) {
+        setTimeout(() => {
+                  alert("Você Ganhou!!");
+        }, 300);
+      }
+    },
+  };
 
-  
-
-  // const possicaoCartas = [
-  //   carta0,
-  //   carta1,
-  //   carta2,
-  //   carta3,
-  //   carta4,
-  //   carta5,
-  //   carta6,
-  //   carta7,
-  // ];
-
-var cards = document.querySelectorAll(".frente"); 
-  $.each(cards, function (index, value) {
-    console.log(cards[index]);
-    console.log(index + " : " + value[index]);
-  });
-
-  carta0.click(function () {
-    console.log("clicou");
-    verso0.toggle();
-  });
-  carta1.click(function () {
-    console.log("clicou");
-    verso1.toggle();
-  });
+  posicao.inicia();
 });

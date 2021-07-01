@@ -12,38 +12,54 @@
     <main>
       <h1>Jogo da Memória</h1>
       <section class="jogoMemoria">
-        <div class="cartaMemoria" id="cartaAngular1">
-          <img class="frente" src="/img/angularjs.png" alt="frente"  />
-          <img id="versoAngular1" class="verso" src="/img/porygon.png" alt="verso" />
+        <div class="carta pares">
+          <img class="frente" src="/img/angularjs.png" alt="frente" />
+          <img class="verso" />
         </div>
-        <div class="cartaMemoria" id="cartaAngular2">
-          <img class="frente" src="/img/angularjs.png" alt="frente"  />
-          <img id="versoAngular2" class="verso" src="/img/porygon.png" alt="verso" />
+        <div class="carta pares">
+          <img class="frente" src="/img/angularjs.png" alt="frente" />
+          <img class="verso" />
         </div>
-        <div class="cartaMemoria" id="cartaCss1">
-          <img class="frente" src="/img/css3.png" alt="frente"  />
-          <img class="verso" src="/img/porygon.png" alt="verso" />
-        </div>
-        <div class="cartaMemoria" id="cartaCss2">
+        <div class="carta pares">
           <img class="frente" src="/img/css3.png" alt="frente" />
-          <img class="verso" src="/img/porygon.png" alt="verso" />
+          <img class="verso" />
         </div>
-        <div class="cartaMemoria" id="cartaHtml1">
+        <div class="carta pares">
+          <img class="frente" src="/img/css3.png" alt="frente" />
+          <img class="verso" />
+        </div>
+        <div class="carta pares">
           <img class="frente" src="/img/html5.png" alt="frente" />
-          <img class="verso" src="/img/porygon.png" alt="verso" />
+          <img class="verso" />
         </div>
-        <div class="cartaMemoria" id="cartaHtml2">
+        <div class="carta pares">
           <img class="frente" src="/img/html5.png" alt="frente" />
-          <img class="verso" src="/img/porygon.png" alt="verso" />
+          <img class="verso" />
         </div>
-        <div class="cartaMemoria" id="cartaNode1">
+        <div class="carta pares">
           <img class="frente" src="/img/nodejs.png" alt="frente" />
-          <img class="verso" src="/img/porygon.png" alt="verso" />
+          <img class="verso" />
         </div>
-        <div class="cartaMemoria" id="cartaNode2">
+        <div class="carta pares">
           <img class="frente" src="/img/nodejs.png" alt="frente" />
-          <img class="verso" src="/img/porygon.png" alt="verso" />
+          <img class="verso" />
         </div>
+      </section>
+
+      <input class="reiniciar" type="button" value="reset" />
+
+      <section class="placar">
+        <h2 class="center">Placar</h2>
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>N° de palavras</th>
+              <th>Remover</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </section>
     </main>
   </body>
