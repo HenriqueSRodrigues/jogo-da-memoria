@@ -11,56 +11,51 @@
   <body>
     <main>
       <h1>Jogo da Memória</h1>
+
+      <div class="campoInicio">
+        <label
+          ><strong> Nome do jogador </strong
+          ><input type="text" id="jogador" name="Name" />
+          <input id="salvar" type="button" value="salvar"
+        /></label>
+        <input id="iniciar" type="button" value="Iniciar" />
+      </div>
+
       <section class="jogoMemoria">
         <div class="carta pares">
-          <img class="frente" src="/img/angularjs.png" alt="frente" />
+          <img class="frente" alt="frente" />
           <img class="verso" />
         </div>
         <div class="carta pares">
-          <img class="frente" src="/img/angularjs.png" alt="frente" />
+          <img class="frente" alt="frente" />
           <img class="verso" />
         </div>
         <div class="carta pares">
-          <img class="frente" src="/img/css3.png" alt="frente" />
+          <img class="frente" alt="frente" />
           <img class="verso" />
         </div>
         <div class="carta pares">
-          <img class="frente" src="/img/css3.png" alt="frente" />
+          <img class="frente" alt="frente" />
           <img class="verso" />
         </div>
         <div class="carta pares">
-          <img class="frente" src="/img/html5.png" alt="frente" />
+          <img class="frente" alt="frente" />
           <img class="verso" />
         </div>
         <div class="carta pares">
-          <img class="frente" src="/img/html5.png" alt="frente" />
+          <img class="frente" alt="frente" />
           <img class="verso" />
         </div>
         <div class="carta pares">
-          <img class="frente" src="/img/nodejs.png" alt="frente" />
+          <img class="frente" alt="frente" />
           <img class="verso" />
         </div>
         <div class="carta pares">
-          <img class="frente" src="/img/nodejs.png" alt="frente" />
+          <img class="frente" alt="frente" />
           <img class="verso" />
         </div>
       </section>
 
-      <input class="reiniciar" type="button" value="reset" />
-
-      <section class="placar">
-        <h2 class="center">Placar</h2>
-        <table class="tabela">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>N° de palavras</th>
-              <th>Remover</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </section>
-    </main>
-  </body>
-</html>
+      <div class="informacoes">
+        <li><strong><span id="contaClick">0</span> Clicks Errados</li></strong>
+      </div>
